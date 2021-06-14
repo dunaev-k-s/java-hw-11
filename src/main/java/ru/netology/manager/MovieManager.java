@@ -8,31 +8,26 @@ import ru.netology.domain.FeedMovie;
 @AllArgsConstructor
 public class MovieManager {
     private int feedSize = 10;
+    private MovieRepository repository;
 
     public MovieManager(int feedSize){
         this.feedSize = feedSize;
     }
-
-    private FeedMovie[] movies = new FeedMovie[0];
-
-    public void addMovie(FeedMovie feedMovie){
-        int length = movies.length + 1;
-        FeedMovie[] tmp = new FeedMovie[length];
-        System.arraycopy(movies, 0, tmp, 0, movies.length);
-        int lastIndex = tmp.length - 1;
-        tmp[lastIndex] = feedMovie;
-        movies = tmp;
+    public MovieManager(MovieRepository repository){
+        this.repository = repository;
     }
 
-    public FeedMovie[] getMovies(){
-        if (feedSize > movies.length){
-            this.feedSize = movies.length;
-        }
-        FeedMovie[] feed = new FeedMovie[feedSize];
-        for (int i = 0; i < feed.length; i++){
+    public void addMovie(FeedMovie feedMovie){
+        repository.save(feedMovie);
+    }
+
+    public FeedMovie[] getAll(){
+        FeedMovie[] movies = repository.findAll();
+        FeedMovie[] result = new FeedMovie[movies.length];
+        for (int i = 0; i < result.length; i++){
             int index = feedSize - i - 1;
-            feed[i] = movies[index];
+            result[i] = movies[index];
         }
-        return feed;
+        return result;
     }
 }

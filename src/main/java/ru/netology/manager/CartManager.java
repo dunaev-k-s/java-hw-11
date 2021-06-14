@@ -34,6 +34,9 @@ public class CartManager {
 
   // наивная реализация
   public void removeById(int id) {
+    if (id > items.length){
+      return;
+    }
     int length = items.length - 1;
     PurchaseItem[] tmp = new PurchaseItem[length];
     int index = 0;

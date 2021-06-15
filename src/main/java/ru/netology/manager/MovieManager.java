@@ -8,12 +8,11 @@ import ru.netology.domain.FeedMovie;
 @AllArgsConstructor
 public class MovieManager {
     private int feedSize = 10;
+    private FeedMovie[] movies = new FeedMovie[0];
 
     public MovieManager(int feedSize){
         this.feedSize = feedSize;
     }
-
-    private FeedMovie[] movies = new FeedMovie[0];
 
     public void addMovie(FeedMovie feedMovie){
         int length = movies.length + 1;
@@ -25,12 +24,13 @@ public class MovieManager {
     }
 
     public FeedMovie[] getMovies(){
+        int size = feedSize;
         if (feedSize > movies.length){
-            this.feedSize = movies.length;
+            size = movies.length;
         }
-        FeedMovie[] feed = new FeedMovie[feedSize];
+        FeedMovie[] feed = new FeedMovie[size];
         for (int i = 0; i < feed.length; i++){
-            int index = feedSize - i - 1;
+            int index = size - i - 1;
             feed[i] = movies[index];
         }
         return feed;

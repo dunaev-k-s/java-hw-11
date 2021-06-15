@@ -1,7 +1,11 @@
 package ru.netology.manager;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import ru.netology.domain.FeedMovie;
 
+@NoArgsConstructor
+@AllArgsConstructor
 public class MovieRepository {
     private FeedMovie[] movies = new FeedMovie[0];
 
@@ -32,5 +36,22 @@ public class MovieRepository {
             }
         }
         movies = tmp;
+    }
+
+    public FeedMovie findById(int id){
+        if (id > movies.length){
+            return null;
+        }
+        FeedMovie result = null;
+        for (FeedMovie movie : movies) {
+            if (movie.getId() == id){
+                result = movies[id-1];
+            }
+        }
+        return result;
+    }
+
+    public void removeAll(){
+        movies = null;
     }
 }

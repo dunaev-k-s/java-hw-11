@@ -7,7 +7,7 @@ import ru.netology.domain.FeedMovie;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MovieManager {
-    private int feedSize = 10;
+    private int feedSize = 6;
     private MovieRepository repository;
 
     public MovieManager(int feedSize){
@@ -29,5 +29,13 @@ public class MovieManager {
             result[i] = movies[index];
         }
         return result;
+    }
+
+    public void removeAll(){
+        repository.removeAll();
+    }
+
+    public FeedMovie findById(int id){
+        return repository.findById(id);
     }
 }

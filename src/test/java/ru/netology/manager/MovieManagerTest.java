@@ -14,7 +14,7 @@ public class MovieManagerTest {
     private FeedMovie sixth = new FeedMovie(6,"Sixth","Comedy","URL","URL",18102021);
 
     @Test
-    public void shouldAddMovie(){
+    public void shouldAddOneMovie(){
         MovieManager manager = new MovieManager(1);
         manager.addMovie(second);
 

@@ -39,7 +39,8 @@ public class FeedOverflowedTest {
     public void shouldGetTen(){
 
         FeedMovie[] actual = manager.getMovies();
-        FeedMovie[] expected = new FeedMovie[]{ tenth,
+        FeedMovie[] expected = new FeedMovie[]{ eleventh,
+                                                tenth,
                                                 ninth,
                                                 eighth,
                                                 seventh,
@@ -47,8 +48,7 @@ public class FeedOverflowedTest {
                                                 fifth,
                                                 fourth,
                                                 third,
-                                                second,
-                                                first};
+                                                second};
         assertArrayEquals(actual,expected);
     }
 };

@@ -10,11 +10,11 @@ public class MovieManager {
     private int feedSize = 10;
     private FeedMovie[] movies = new FeedMovie[0];
 
-    public MovieManager(int feedSize){
+    public MovieManager(int feedSize) {
         this.feedSize = feedSize;
     }
 
-    public void addMovie(FeedMovie feedMovie){
+    public void addMovie(FeedMovie feedMovie) {
         int length = movies.length + 1;
         FeedMovie[] tmp = new FeedMovie[length];
         System.arraycopy(movies, 0, tmp, 0, movies.length);
@@ -23,14 +23,15 @@ public class MovieManager {
         movies = tmp;
     }
 
-    public FeedMovie[] getMovies(){
+    public FeedMovie[] getMovies() {
         int size = feedSize;
-        if (feedSize > movies.length){
+        if (feedSize > movies.length) {
             size = movies.length;
         }
+
         FeedMovie[] feed = new FeedMovie[size];
-        for (int i = 0; i < feed.length; i++){
-            int index = size - i - 1;
+        for (int i = 0; i < feed.length; i++) {
+            int index = movies.length - i - 1;
             feed[i] = movies[index];
         }
         return feed;

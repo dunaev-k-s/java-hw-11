@@ -13,11 +13,7 @@ public class FeedNotFilledTest {
     private FeedMovie third = new FeedMovie(3,"Third","Comedy","URL","URL",18102021);
     private FeedMovie fourth = new FeedMovie(4,"Fourth","Comedy","URL","URL",18102021);
     private FeedMovie fifth = new FeedMovie(5,"Fifth","Comedy","URL","URL",18102021);
-    private FeedMovie sixth = new FeedMovie(6,"Sixth","Comedy","URL","URL",18102021);
-    private FeedMovie seventh = new FeedMovie(7,"Sixth","Comedy","URL","URL",18102021);
-    private FeedMovie eighth = new FeedMovie(8,"Sixth","Comedy","URL","URL",18102021);
-    private FeedMovie ninth = new FeedMovie(9,"Sixth","Comedy","URL","URL",18102021);
-    private FeedMovie tenth = new FeedMovie(10,"Sixth","Comedy","URL","URL",18102021);
+
 
     @BeforeEach
     public void setUp(){

@@ -35,7 +35,7 @@ public class MovieManagerTest {
         manager.addMovie(sixth);
 
         FeedMovie[] actual = manager.getMovies();
-        FeedMovie[] expected = new FeedMovie[]{fifth,fourth,third,second,first};
+        FeedMovie[] expected = new FeedMovie[]{sixth,fifth,fourth,third,second};
 
         assertArrayEquals(actual,expected);
     }
